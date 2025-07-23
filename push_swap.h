@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/22 19:37:47 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/23 18:45:22 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,22 +18,22 @@
 #include <unistd.h>
 #include <limits.h>
 
-typedef struct t_node {
+typedef struct s_node {
     int     value;
-    int     index;
-    int     *next;
-} s_node;
+    t_node    *next;
+    t_node    *prev;
+} t_node;
 
-typedef struct t_satck {
+typedef struct s_satck {
     int size;
-    s_node  *top;
-    s_node  *bottom;
-} s_stack;
+    t_node  *top;
+    t_node  *bottom;
+} t_stack;
 
 typedef struct t_context {
     int count;
-    s_stack a;
-    s_stack b;
+    t_stack *a;
+    t_stack *b;
 } s_context;
 
 

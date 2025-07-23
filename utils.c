@@ -1,28 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 19:08:48 by miguelmo          #+#    #+#             */
+/*   Created: 2025/07/23 17:21:44 by miguelmo          #+#    #+#             */
 /*   Updated: 2025/07/23 18:45:22 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv)
-{
-    s_context ctx;
-
-    ctx.a = create_stack();
-    ctx.b = crate_stack();
-
-    if (argc < 2)
-    {
-        write (2, "Error\n", 6);
-        return 1;
-    }
-    parse_args(ctx, argc, argv);
-}
