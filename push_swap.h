@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/23 18:45:22 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:12:38 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,18 @@ typedef struct s_node {
     t_node    *prev;
 } t_node;
 
-typedef struct s_satck {
+typedef struct s_stack {
     int size;
     t_node  *top;
     t_node  *bottom;
 } t_stack;
 
-typedef struct t_context {
-    int count;
-    t_stack *a;
-    t_stack *b;
-} s_context;
+
+//utils
+int ft_isspace(int c);
+
+
+
 
 
 #endif

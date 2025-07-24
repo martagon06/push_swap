@@ -6,23 +6,27 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:08:48 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/23 18:45:22 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/24 13:12:26 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv)
+int main(int argc, char **argv)
 {
-    s_context ctx;
+    t_stack *a;
+    t_stack *b;
 
-    ctx.a = create_stack();
-    ctx.b = crate_stack();
+    a = create_stack();
+    b = crate_stack();
 
     if (argc < 2)
     {
         write (2, "Error\n", 6);
         return 1;
     }
-    parse_args(ctx, argc, argv);
+    parse_args(&a, argc, argv);
+    show_stack(a);
+    free(a);
+    return 0;
 }
