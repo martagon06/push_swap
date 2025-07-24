@@ -6,13 +6,9 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:53:47 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/24 13:12:30 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/24 20:15:51 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	write(fd, s, ft_strlen(s));
-}
