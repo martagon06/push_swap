@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_args.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:59:09 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/25 17:42:04 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/25 19:01:27 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,30 +26,28 @@ void parse_args(t_stack *a, int argc, char **argv)
 {
  int i;
  char **temporal;
+ int value;
 
- if (argv == 2)
+ if (argc == 2)
    temporal = ft_split(argv[1], " ");
  else 
    temporal = argv + 1 ;
- i = 0;
    while (i < argc)
  {
    t_node *node = NULL;
-   int value;
-   if (ft_isdigit(temporal[i]) == 0)
+   if (!valid_number(temporal[i]))
       error_message("Error");
    value = ft_atoi(argv[i]);
    if (check_repetion(temporal, value, i + 1) == 1)  
       error_message("Error");   
    node = create_node(value);
    if(!node)
-   {
-      write(1, "Error\n", 6);
-      return 1;
-   }
+      error_message("Error");
    add_node(a, node);
    i++;
  }
+ if (argc == 2)
+   free_temporal(temporal);
 }
 
 void show_stack(t_stack *stack)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:53:47 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/25 17:42:11 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/25 19:01:34 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,10 +47,11 @@ char	**ft_split(char const *s, char c)
 			s++;
 		if (*s)
 		{
-			if (!ft_strchr(s, c))
+			char *next_c = ft_strchr(s, c);
+			if (!next_c)
 				s_len = ft_strlen(s);
 			else
-				s_len = ft_strchr (s, c) - s;
+				s_len = next_c - s;
 			str[i++] = ft_substr(s, 0, s_len);
 			s = s + s_len;
 		}
@@ -63,4 +64,19 @@ void	error_message(char *message)
 {
 	ft_putendl_fd(message, 1);
 	exit(1);
+}
+
+int valid_number(char *str)
+{
+	int i = 0;
+	if (str[i] == '+' || str[i] == '-') 
+		i++;
+    if (str[i] == '\0') 
+		return 0;
+    while (str[i]) {
+        if (!ft_isdigit(str[i]))
+            return 0;
+        i++;
+    }
+    return 1;
 }
