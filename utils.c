@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:21:44 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/24 20:15:48 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/25 17:19:27 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int ft_isspace(int c)
     return  ((c >= 9 && c <= 13) || c == 32 );
 }
 
-int	ft_isdigit(int c)
+int	ft_isdigit(char c)
 {
 	return (c >= '0' && c <= '9');
 }

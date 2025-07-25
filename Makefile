@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+         #
+#    By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 19:29:57 by miguelmo          #+#    #+#              #
-#    Updated: 2025/07/24 20:15:53 by miguelmo         ###   ########.fr        #
+#    Updated: 2025/07/25 17:42:18 by miguelmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 

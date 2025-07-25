@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/24 20:15:55 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/25 17:42:12 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,11 @@ int ft_isspace(int c);
 int	ft_atoi(const char *str);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd);
+char	**ft_split(char const *s, char c);
+int	ft_isdigit(char c);
+void	error_message(char *message);
+
 
 
 
