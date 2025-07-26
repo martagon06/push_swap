@@ -1,32 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 19:08:48 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/26 17:48:07 by miguelmo         ###   ########.fr       */
+/*   Created: 2025/07/26 16:57:31 by miguelmo          #+#    #+#             */
+/*   Updated: 2025/07/26 20:19:10 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+void push(t_stack **src, t_stack **dest)
 {
-    t_stack *a;
-    t_stack *b;
+    t_stack *temporal;
 
-    a = create_stack();
-    b = crate_stack();
+    if (*src == NULL)
+        return;
+    temporal = src;
+    *src = (*src)->next;
+}
 
-    if (argc < 2)
-    {
-        write (2, "Error\n", 6);
-        return 1;
-    }
-    parse_args(&a, argc, argv);
-    show_stack(a);
-    free(a);
-    return 0;
+void    pa(t_stack **a, t_stack **b)
+{
+    push(b, a);
+    write(1, "pa\n", 3);
+}
+
+void    pb(t_stack **a, t_stack **b)
+{
+    push(a, b);
+    write(1, "pb\n", 3);
 }

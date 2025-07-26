@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/17 19:08:48 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/26 17:48:07 by miguelmo         ###   ########.fr       */
+/*   Created: 2025/07/26 20:14:00 by miguelmo          #+#    #+#             */
+/*   Updated: 2025/07/26 20:19:15 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char **argv)
+void sa(t_stack **a)
 {
-    t_stack *a;
-    t_stack *b;
+    swap(a);
+    write(1, "sa\n", 3);
+}
 
-    a = create_stack();
-    b = crate_stack();
+void    sb(t_stack **b)
+{
+    swap(b);
+    write(1, "sb\n", 3);
+}
 
-    if (argc < 2)
-    {
-        write (2, "Error\n", 6);
-        return 1;
-    }
-    parse_args(&a, argc, argv);
-    show_stack(a);
-    free(a);
-    return 0;
+void ss(t_stack **a, t_stack **b)
+{
+    sa(a);
+    sb(b);
+    write(1, "ss\n", 3);
 }
