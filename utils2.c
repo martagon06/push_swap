@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:53:47 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/25 19:01:34 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/30 18:59:26 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,4 +79,18 @@ int valid_number(char *str)
         i++;
     }
     return 1;
+}
+
+
+int		ft_lstsize(t_stack *lst)
+{
+	int count;
+
+	count = 0;
+	while(lst != NULL)
+	{
+		count++;
+		lst = lst->top->next;
+	}
+	return count;
 }
