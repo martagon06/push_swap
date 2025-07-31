@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 12:17:24 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/31 12:49:44 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:06:33 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,14 @@ void reverse_rotate(t_stack *stack)
         return;
     last_node = stack->bottom;
 
-    stack->
+    stack->bottom = last_node->prev;
+    stack->bottom->next = NULL;
+    
+    last_node->prev = NULL;
+    last_node->next = stack->top;
+    stack->top->prev = last_node;
+    
+    stack->top = last_node;
 }
 
 void rra(t_stack *a)

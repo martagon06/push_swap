@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:08:48 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/26 17:48:07 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:06:33 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int main(int argc, char **argv)
         return 1;
     }
     parse_args(&a, argc, argv);
+    
     show_stack(a);
     free(a);
     return 0;
