@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:30:52 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/31 12:49:48 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/07/31 16:14:31 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,7 @@ void ra(t_stack *a)
 
 void rb(t_stack *b)
 {
-    rotate(b);
-    write(1, "rb\n", 3);
+    rotate(rb);
+    write (1, "rb\n", 3);
 }
 
-void rr(t_stack *a, t_stack *b)
-{
-    rotate(a);
-    rotate(b);
-    write(1, "rr\n", 3);
-}
