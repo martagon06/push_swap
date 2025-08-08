@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/30 14:54:01 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:05:27 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 
 typedef struct s_node {
     int     value;
+    int     index;
     t_node    *next;
     t_node    *prev;
 } t_node;

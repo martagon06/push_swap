@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/31 16:15:05 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/08 19:05:29 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,11 @@ void rinyshort(t_stack *a, t_stack *b)
         sort_5(a, b);
 }
 
+void sort_2(t_stack *a)
+{
+    if (a->top > a->top->next)
+        sa(a);
+}
 void sort_3(t_stack *a)
 {
     int first = a->top->value;
