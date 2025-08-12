@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/08 19:05:27 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/12 14:15:01 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,18 @@
 typedef struct s_node {
     int     value;
     int     index;
-    t_node    *next;
-    t_node    *prev;
+    int     cost_a;
+    int     cost_b;
+    int     total_cost;
+    struct s_node    *next;
+    struct s_node    *prev;
 } t_node;
 
-typedef struct s_stack {
+typedef struct s_stack
+{
+    t_node *top;
+    t_node *bottom;
     int size;
-    t_node  *top;
-    t_node  *bottom;
 } t_stack;
 
 

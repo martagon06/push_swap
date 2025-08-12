@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/08 19:05:29 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/12 14:15:04 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,16 @@ void rinyshort(t_stack *a, t_stack *b)
         sort_4(a, b);
     else if (a->size == 5)
         sort_5(a, b);
+    else
+        sort_big(a, b);
 }
 
 void sort_2(t_stack *a)
 {
-    if (a->top > a->top->next)
+    if (a->top->value > a->top->next->value)
         sa(a);
 }
+
 void sort_3(t_stack *a)
 {
     int first = a->top->value;
@@ -67,4 +70,28 @@ void sort_5(t_stack *a, t_stack *b)
     sort_3(a);
     pa(b, a);
     pa(b, a);
+}
+
+void sort_big(t_stack *a, t_stack *b)
+{
+    int pushed = 0;
+    int size = a->size;
+    while (a->size > 3)
+    {
+        if (a->top->index <= pushed)
+        {
+            pb(a, b);
+            pushed++;
+        }
+        else
+            ra(a);
+    }
+    sort_3(a);
+    while (b->size > 0)
+    {
+        calculate_costs(a->top, b->top);
+        move_cheapest(a, b);
+    }
+    while (a->top->index != 0)
+        ra(a);
 }
