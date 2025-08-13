@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/13 19:39:29 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/13 20:16:49 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,11 @@ void    move_cheapest(t_stack *a, t_stack *b);
 
 // Utilidades de stacks y nodos
 t_node  *create_node(int value);
+t_stack *create_stack(void);
 void    free_stack(t_stack *stack);
 void    push_min_to_b(t_stack *a, t_stack *b);
 int     is_sorted(t_stack *a);
+int     is_duplicate(t_stack *a, int value);
 
 // Parsing y validación
 int     ft_isspace(int c);
@@ -80,7 +82,10 @@ char    **ft_split(char const *s, char c);
 int     ft_isdigit(char c);
 void    error_message(char *message);
 int     valid_number(char *str);
-
-// ...otros prototipos según tus archivos...
+void    parse_args(t_stack **a, int argc, char **argv);
+void    add_node(t_stack *a, t_node *node);
+void    free_temporal(char **temporal);
+void    show_stack(t_stack *stack);
+void    escribir_numero(int n);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 19:29:57 by miguelmo          #+#    #+#              #
-#    Updated: 2025/08/13 19:39:31 by miguelmo         ###   ########.fr        #
+#    Updated: 2025/08/13 20:16:44 by miguelmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@ NAME = push_swap
 SRC = main.c check_args.c normalize.c tinyshort.c calculate_cost.c move_cheapest.c \
 	swap.c rotate.c push.c reverse_rotate.c \
 	utils.c stack_utils.c parse_utils.c error_utils.c \
-	push_min_to_b.c is_sorted.c
+	push_min_to_b.c is_sorted.c \
+	create_node.c add_node.c escribir_numero.c free_temporal.c is_valid_int.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -38,9 +39,9 @@ $(NAME): $(OBJ)
 		@echo "$(YELLOW)Compiling $<$(RESET)"
 		@$(CC) $(CFLAGS) -c $< -o $@
 
-clean: 
+clean:
 	@echo "$(YELLOW)Cleaning object files...$(RESET)"
-	@$(RM) -r $(OBJ_DIR)
+	@$(RM) $(OBJ)
 fclean: clean
 		@echo "$(YELLOW)Removing executable...$(RESET)"
 		@$(RM) $(NAME)

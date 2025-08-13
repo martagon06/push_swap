@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 20:14:00 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/31 12:49:49 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/13 20:16:46 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,19 +31,19 @@ void swap(t_stack *stack)
         stack->bottom = first;
 }
 
-void sa(t_stack **a)
+void sa(t_stack *a)
 {
     swap(a);
     write(1, "sa\n", 3);
 }
 
-void    sb(t_stack **b)
+void    sb(t_stack *b)
 {
     swap(b);
     write(1, "sb\n", 3);
 }
 
-void ss(t_stack **a, t_stack **b)
+void ss(t_stack *a, t_stack *b)
 {
     sa(a);
     sb(b);

@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:08:48 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/31 16:06:33 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/13 19:43:20 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main(int argc, char **argv)
     t_stack *b;
 
     a = create_stack();
-    b = crate_stack();
+    b = create_stack();
 
     if (argc < 2)
     {
@@ -26,8 +26,11 @@ int main(int argc, char **argv)
         return 1;
     }
     parse_args(&a, argc, argv);
-    
-    show_stack(a);
-    free(a);
+
+    normalize(a);
+    rinyshort(a, b);
+
+    free_stack(a);
+    free_stack(b);
     return 0;
 }

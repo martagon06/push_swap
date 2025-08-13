@@ -6,11 +6,16 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 18:51:26 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/12 14:15:08 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/13 20:16:40 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+// Prototipos para evitar declaraciones implícitas
+int get_position(t_node *top, t_node *target);
+int target_position(t_node *a, int index_b);
+int position_of_min_index(t_node *a);
 
 static int get_stack_size(t_node *top)
 {
@@ -35,7 +40,7 @@ void calculate_costs(t_node *a, t_node *b)
     }
 }
 
-static int get_position(t_node *top, t_node *target)
+int get_position(t_node *top, t_node *target)
 {
     int pos = 0;
     while (top && top != target)
@@ -46,7 +51,7 @@ static int get_position(t_node *top, t_node *target)
     return pos;
 }
 
-static int target_position(t_node *a, int index_b)
+int target_position(t_node *a, int index_b)
 {
     int pos = 0, best_index = INT_MAX, best_pos = 0;
     t_node *current = a;
@@ -65,7 +70,7 @@ static int target_position(t_node *a, int index_b)
     return best_pos;
 }
 
-static int position_of_min_index(t_node *a)
+int position_of_min_index(t_node *a)
 {
     int pos = 0, min_index = INT_MAX, min_pos = 0;
     t_node *current = a;

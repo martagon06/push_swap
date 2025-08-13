@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/13 19:39:32 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/13 20:16:42 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void sort_5(t_stack *a, t_stack *b)
 void sort_big(t_stack *a, t_stack *b)
 {
     int pushed = 0;
-    int size = a->size;
+
     while (a->size > 3)
     {
         if (a->top->index <= pushed)
