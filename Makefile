@@ -6,17 +6,16 @@
 #    By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 19:29:57 by miguelmo          #+#    #+#              #
-#    Updated: 2025/08/13 20:16:44 by miguelmo         ###   ########.fr        #
+#    Updated: 2025/08/19 13:23:46 by miguelmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap
+NAME = push_swap.a
 
 SRC = main.c check_args.c normalize.c tinyshort.c calculate_cost.c move_cheapest.c \
 	swap.c rotate.c push.c reverse_rotate.c \
-	utils.c stack_utils.c parse_utils.c error_utils.c \
-	push_min_to_b.c is_sorted.c \
-	create_node.c add_node.c escribir_numero.c free_temporal.c is_valid_int.c
+	utils.c utils2.c utils3.c\
+	create_utils.c
 
 OBJ = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/13 20:16:49 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/19 13:23:43 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,7 @@ void    add_node(t_stack *a, t_node *node);
 void    free_temporal(char **temporal);
 void    show_stack(t_stack *stack);
 void    escribir_numero(int n);
+unsigned long	ft_strlen(const char *str);
+char	*ft_strchr(const char *s, int c);
 
 #endif
