@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/19 13:23:43 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 13:59:17 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,11 @@ void    normalize(t_stack *a);
 // Costes y movimientos óptimos
 void    calculate_costs(t_node *a, t_node *b);
 void    move_cheapest(t_stack *a, t_stack *b);
+int target_position(t_node *a, int index_b);
+int position_of_min_index(t_node *a);
+int get_position(t_node *top, t_node *target);
+
+
 
 // Utilidades de stacks y nodos
 t_node  *create_node(int value);
@@ -71,6 +76,8 @@ void    free_stack(t_stack *stack);
 void    push_min_to_b(t_stack *a, t_stack *b);
 int     is_sorted(t_stack *a);
 int     is_duplicate(t_stack *a, int value);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+
 
 // Parsing y validación
 int     ft_isspace(int c);

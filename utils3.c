@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:10:58 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/19 13:34:32 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 13:59:20 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,25 +41,6 @@ void push_min_to_b(t_stack *a, t_stack *b)
             rra(a);
     }
     pb(a, b);
-}
-
-void push_to_b(t_node **a, t_node **b, int size)
-{
-    int pushed = 0;
-    int i = 0;
-    int median = size / 2;
-
-    while (pushed < median && i < size)
-    {
-        if ((*a)->index >= median)
-        {
-            pb(a, b);  // push to stack_b
-            pushed++;
-        }
-        else
-            ra(a);     // rotate stack_a
-        i++;
-    }
 }
 
 unsigned long	ft_strlen(const char *str)
@@ -111,4 +92,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	str[j] = 0;
 	return (str);
 }
-

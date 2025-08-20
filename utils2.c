@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils2.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 18:53:47 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/07/30 18:59:26 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 13:22:25 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,13 @@ char	**ft_split(char const *s, char c)
 	unsigned int	i;
 	char			**str;
 	size_t			s_len;
-
+	if (!s)
+		return (NULL);
 	i = 0;
 	str = (char **)malloc((ft_countwords(s, c) + 1) * sizeof(char *));
-	if (!s || !str)
-		return (0);
+	if (!str)
+		return (NULL);
+
 	while (*s)
 	{
 		while (*s == c && *s)
@@ -82,15 +84,19 @@ int valid_number(char *str)
 }
 
 
-int		ft_lstsize(t_stack *lst)
+int	ft_lstsize(t_stack *lst)
 {
-	int count;
+	int count = 0;
+	t_node *current;
 
-	count = 0;
-	while(lst != NULL)
+	if (!lst)
+		return 0;
+
+	current = lst->top;
+	while (current)
 	{
 		count++;
-		lst = lst->top->next;
+		current = current->next;
 	}
 	return count;
 }
