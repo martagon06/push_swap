@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:59:09 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/13 20:16:36 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:11:52 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void parse_args(t_stack **a, int argc, char **argv)
                 print_error_and_exit();
             value = ft_atoi(temporal[i]);
             node = create_node(value);
-            add_node(*a, node); // Cambio aquí
+            add_node(*a, node);
             i++;
         }
         free_temporal(temporal);
@@ -80,20 +80,8 @@ void parse_args(t_stack **a, int argc, char **argv)
                 print_error_and_exit();
             value = ft_atoi(argv[i]);
             node = create_node(value);
-            add_node(*a, node); // Cambio aquí
+            add_node(*a, node);
             i++;
         }
-    }
-}
-
-void show_stack(t_stack *stack)
-{
-    t_node *temp = stack->top;
-    write(1, "Stack construido\n", 17);
-    while (temp)
-    {
-        escribir_numero(temp->value);
-        write(1, "\n", 1);
-        temp = temp->next;
     }
 }

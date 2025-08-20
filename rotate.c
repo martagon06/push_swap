@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 14:30:52 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/13 20:16:48 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:11:49 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,12 @@ void rb(t_stack *b)
 {
     rotate(b);
     write (1, "rb\n", 3);
+}
+
+void rr(t_stack *a, t_stack *b)
+{
+    rotate(a);
+    rotate(b);
+    write(1, "rr\n", 3);
 }
 

@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/20 13:59:17 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:11:51 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,6 @@ int     valid_number(char *str);
 void    parse_args(t_stack **a, int argc, char **argv);
 void    add_node(t_stack *a, t_node *node);
 void    free_temporal(char **temporal);
-void    show_stack(t_stack *stack);
 void    escribir_numero(int n);
 unsigned long	ft_strlen(const char *str);
 char	*ft_strchr(const char *s, int c);

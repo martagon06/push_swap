@@ -6,13 +6,13 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 16:47:33 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/13 19:40:26 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/20 18:11:58 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack *crear_stack(void)
+t_stack *create_stack(void)
 {
     t_stack *stack;
     stack = malloc(sizeof(t_stack));
@@ -49,4 +49,28 @@ void    add_node(t_stack *stack, t_node *new)
         stack->bottom = new;
     }
     stack->size++;
+}
+
+void free_stack(t_stack *stack)
+{
+    t_node *current = stack->top;
+    t_node *next;
+
+    while (current)
+    {
+        next = current->next;
+        free(current);
+        current = next;
+    }
+}
+
+void    free_temporal(char **temporal)
+{
+    int i = 0;
+    while (temporal[i])
+    {
+        free(temporal[i]);
+        i++;
+    }
+    free(temporal); 
 }
