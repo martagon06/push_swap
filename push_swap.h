@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/20 18:11:51 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/21 13:54:57 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,17 +56,19 @@ void    sort_3(t_stack *a);
 void    sort_4(t_stack *a, t_stack *b);
 void    sort_5(t_stack *a, t_stack *b);
 void    sort_big(t_stack *a, t_stack *b);
+void rotate_min_to_top(t_stack *a);
 
 // Normalización e índices
 void    normalize(t_stack *a);
 
 // Costes y movimientos óptimos
-void    calculate_costs(t_node *a, t_node *b);
+t_node *calculate_cheapest(t_node *a, t_node *b);
 void    move_cheapest(t_stack *a, t_stack *b);
 int target_position(t_node *a, int index_b);
 int position_of_min_index(t_node *a);
 int get_position(t_node *top, t_node *target);
-
+void exec_moves(t_stack *a, t_stack *b, int cost_a, int cost_b);
+t_node *get_node_by_index(t_node *top, int index);
 
 
 // Utilidades de stacks y nodos

@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/19 12:56:06 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/21 14:22:52 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,12 +75,15 @@ void sort_5(t_stack *a, t_stack *b)
 void sort_big(t_stack *a, t_stack *b)
 {
     int pushed = 0;
-
+    int size = a->size;
+    int chunk = (size <= 100) ? 15 : 30;
     while (a->size > 3)
     {
-        if (a->top->index <= pushed)
+        if (a->top->index <= pushed + chunk)
         {
             pb(a, b);
+            if (b->top->index < pushed + chunk / 2)
+                rb(b);
             pushed++;
         }
         else
@@ -89,9 +92,22 @@ void sort_big(t_stack *a, t_stack *b)
     sort_3(a);
     while (b->size > 0)
     {
-        calculate_costs(a->top, b->top);
-        move_cheapest(a, b);
+        t_node *cheapest = calculate_cheapest(a->top, b->top);
+        exec_moves(a, b, cheapest->cost_a, cheapest->cost_b);
+        pa(b, a);
     }
-    while (a->top->index != 0)
-        ra(a);
+    rotate_min_to_top(a);
+}
+
+void rotate_min_to_top(t_stack *a)
+{
+    int pos = get_position(a->top, get_node_by_index(a->top, 0));
+    int size = a->size;
+
+    if (pos <= size / 2)
+        while (a->top->index != 0)
+            ra(a);
+    else
+        while (a->top->index != 0)
+            rra(a);
 }

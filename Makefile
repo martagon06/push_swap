@@ -6,11 +6,11 @@
 #    By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 19:29:57 by miguelmo          #+#    #+#              #
-#    Updated: 2025/08/20 18:11:59 by miguelmo         ###   ########.fr        #
+#    Updated: 2025/08/21 14:13:43 by miguelmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = push_swap.a
+NAME = push_swap
 
 SRC = main.c check_args.c normalize.c tinyshort.c calculate_cost.c move_cheapest.c \
 	swap.c rotate.c push.c reverse_rotate.c \
@@ -20,7 +20,7 @@ SRC = main.c check_args.c normalize.c tinyshort.c calculate_cost.c move_cheapest
 OBJ = $(SRC:.c=.o)
 
 CC = cc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 
 GREEN = \033[0;32m
 YELLOW = \033[0;33m
