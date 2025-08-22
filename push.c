@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/26 16:57:31 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/19 12:48:20 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/22 13:49:19 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,27 @@
 
 void push(t_stack *src, t_stack *dest)
 {
-    t_node *temporal;
+    t_node *node;
 
-    if (src == NULL || !(src)->top)
+    if (!src || !src->top)
         return;
-    temporal = (src)->top;
-
-    (src)->top = temporal->next;
-
-    temporal->next = (dest)->top;
-    (dest)->top = temporal;
+    node = src->top;
+    src->top = node->next;
+    if (src->top)
+        src->top->prev = NULL;
+    else
+        src->bottom = NULL;
+    src->size--;
+    node->next = dest->top;
+    node->prev = NULL;
+    if (dest->top)
+        dest->top->prev = node;
+    else
+        dest->bottom = node;
+    dest->top = node;
+    dest->size++;
 }
+
 
 void pa(t_stack *a, t_stack *b)
 {

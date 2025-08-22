@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/21 14:22:52 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/22 13:50:26 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void sort_3(t_stack *a)
     int first = a->top->value;
     int second = a->top->next->value;
     int third = a->bottom->value;
-
     if (first > second && second < third && first < third)
         sa(a);
     else if (first > second && second > third)
@@ -55,6 +54,7 @@ void sort_3(t_stack *a)
     else if (first < second && second > third && first > third)
         rra(a);
 }
+
 
 void sort_4(t_stack *a, t_stack *b)
 {
@@ -77,24 +77,27 @@ void sort_big(t_stack *a, t_stack *b)
     int pushed = 0;
     int size = a->size;
     int chunk = (size <= 100) ? 15 : 30;
-    while (a->size > 3)
+
+    while (a->size > 3 && a->top)
     {
         if (a->top->index <= pushed + chunk)
         {
             pb(a, b);
-            if (b->top->index < pushed + chunk / 2)
+            if (b->top && b->top->index < pushed + chunk / 2)
                 rb(b);
             pushed++;
         }
         else
             ra(a);
     }
-    sort_3(a);
-    while (b->size > 0)
+    if (a->size == 3 && !is_sorted(a))
+        sort_3(a);
+    while (b->top)
     {
         t_node *cheapest = calculate_cheapest(a->top, b->top);
+        if (!cheapest) break;
         exec_moves(a, b, cheapest->cost_a, cheapest->cost_b);
-        pa(b, a);
+        pa(a, b);  // ✅ B → A
     }
     rotate_min_to_top(a);
 }
@@ -110,4 +113,16 @@ void rotate_min_to_top(t_stack *a)
     else
         while (a->top->index != 0)
             rra(a);
+}
+
+int is_sorted(t_stack *s)
+{
+    t_node *cur = s->top;
+    while (cur && cur->next)
+    {
+        if (cur->index > cur->next->index)
+            return 0;
+        cur = cur->next;
+    }
+    return 1;
 }
