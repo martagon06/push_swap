@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/22 13:50:26 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/22 17:52:15 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,8 +96,8 @@ void sort_big(t_stack *a, t_stack *b)
     {
         t_node *cheapest = calculate_cheapest(a->top, b->top);
         if (!cheapest) break;
-        exec_moves(a, b, cheapest->cost_a, cheapest->cost_b);
-        pa(a, b);  // ✅ B → A
+        exec_moves(a, b, cheapest->cost_a, cheapest->cost_b, cheapest);
+        pa(a, b);
     }
     rotate_min_to_top(a);
 }

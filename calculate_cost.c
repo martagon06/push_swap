@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 18:51:26 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/22 13:15:12 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/22 17:52:12 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,28 +104,20 @@ int position_of_min_index(t_node *a)
     return min_pos;
 }
 
-void exec_moves(t_stack *a, t_stack *b, int cost_a, int cost_b)
+void exec_moves(t_stack *a, t_stack *b, int cost_a, int cost_b, t_node *cheapest)
 {
-    while (cost_a > 0 && cost_b > 0)
+    while (cost_a > 0 && cost_b > 0) { rr(a, b); cost_a--; cost_b--; }
+    while (cost_a < 0 && cost_b < 0) { rrr(a, b); cost_a++; cost_b++; }
+    while (cost_a > 0) { ra(a); cost_a--; }
+    while (cost_a < 0) { rra(a); cost_a++; }
+    while (cost_b > 0) { rb(b); cost_b--; }
+    while (cost_b < 0) { rrb(b); cost_b++; }
+    while (b->top != cheapest)
     {
-        rr(a, b);
-        cost_a--;
-        cost_b--;
+        int pos = get_position(b->top, cheapest);
+        if (pos <= b->size / 2) rb(b);
+        else rrb(b);
     }
-    while (cost_a < 0 && cost_b < 0)
-    {
-        rrr(a, b);
-        cost_a++;
-        cost_b++;
-    }
-    while (cost_a > 0)
-        { ra(a); cost_a--; }
-    while (cost_a < 0)
-        { rra(a); cost_a++; }
-    while (cost_b > 0)
-        { rb(b); cost_b--; }
-    while (cost_b < 0)
-        { rrb(b); cost_b++; }
 }
 
 t_node *get_node_by_index(t_node *top, int index)

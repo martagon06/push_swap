@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/21 13:54:57 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/22 17:52:10 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void    move_cheapest(t_stack *a, t_stack *b);
 int target_position(t_node *a, int index_b);
 int position_of_min_index(t_node *a);
 int get_position(t_node *top, t_node *target);
-void exec_moves(t_stack *a, t_stack *b, int cost_a, int cost_b);
+void exec_moves(t_stack *a, t_stack *b, int cost_a, int cost_b, t_node *cheapest);
 t_node *get_node_by_index(t_node *top, int index);
 
 

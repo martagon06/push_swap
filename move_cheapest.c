@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/12 13:47:40 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/22 13:15:14 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/08/22 17:53:15 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	move_cheapest(t_stack *a, t_stack *b)
 	}
 	if (!cheapest)
 		return ;
-	exec_moves(a, b, cheapest->cost_a, cheapest->cost_b);
+	exec_moves(a, b, cheapest->cost_a, cheapest->cost_b, cheapest);
 	pa(b, a);
 }
 
