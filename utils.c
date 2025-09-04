@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: miguelmo <miguelmo@student.42malaga.com    +#+  +:+       +#+        */
+/*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:21:44 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/08/19 12:56:08 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/04 19:43:10 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int ft_isspace(int c)
-{
-    return  ((c >= 9 && c <= 13) || c == 32 );
-}
 
 int	ft_isdigit(char c)
 {
