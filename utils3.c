@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:10:58 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/04 19:43:43 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/04 20:04:57 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,18 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	str[j] = 0;
 	return (str);
+}
+
+int	is_sorted(t_stack *s)
+{
+	t_node	*cur;
+
+	cur = s->top;
+	while (cur && cur->next)
+	{
+		if (cur->index > cur->next->index)
+			return (0);
+		cur = cur->next;
+	}
+	return (1);
 }

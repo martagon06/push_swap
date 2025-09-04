@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/17 19:10:08 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/04 19:40:30 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/04 20:04:51 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ void				push_min_to_b(t_stack *a, t_stack *b);
 int					is_sorted(t_stack *a);
 int					is_duplicate(t_stack *a, int value);
 char				*ft_substr(char const *s, unsigned int start, size_t len);
+int					is_sorted(t_stack *s);
 
 // Parsing y validación
 int					ft_isspace(int c);

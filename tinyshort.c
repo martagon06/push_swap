@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 15:10:16 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/04 19:40:32 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/04 19:55:32 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,68 +73,4 @@ void	sort_5(t_stack *a, t_stack *b)
 	sort_3(a);
 	pa(b, a);
 	pa(b, a);
-}
-
-void	sort_big(t_stack *a, t_stack *b)
-{
-	int		pushed;
-	int		size;
-	int		chunk;
-	t_node	*cheapest;
-
-	pushed = 0;
-	size = a->size;
-	chunk = (size <= 100) ? 15 : 30;
-	while (a->size > 3 && a->top)
-	{
-		if (a->top->index <= pushed + chunk)
-		{
-			pb(a, b);
-			if (b->top && b->top->index < pushed + chunk / 2)
-				rb(b);
-			pushed++;
-		}
-		else
-			ra(a);
-	}
-	if (a->size == 3 && !is_sorted(a))
-		sort_3(a);
-	while (b->top)
-	{
-		cheapest = calculate_cheapest(a->top, b->top);
-		if (!cheapest)
-			break ;
-		exec_moves(a, b, cheapest->cost_a, cheapest->cost_b, cheapest);
-		pa(a, b);
-	}
-	rotate_min_to_top(a);
-}
-
-void	rotate_min_to_top(t_stack *a)
-{
-	int	pos;
-	int	size;
-
-	pos = get_position(a->top, get_node_by_index(a->top, 0));
-	size = a->size;
-	if (pos <= size / 2)
-		while (a->top->index != 0)
-			ra(a);
-	else
-		while (a->top->index != 0)
-			rra(a);
-}
-
-int	is_sorted(t_stack *s)
-{
-	t_node	*cur;
-
-	cur = s->top;
-	while (cur && cur->next)
-	{
-		if (cur->index > cur->next->index)
-			return (0);
-		cur = cur->next;
-	}
-	return (1);
 }
