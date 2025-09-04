@@ -6,15 +6,15 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 18:51:26 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/02 20:24:41 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/04 12:22:41 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int get_stack_size(t_node *top)
+static int  get_stack_size(t_node *top)
 {
-    int size = 0;
+        int size = 0;
     while (top) {
         size++;
         top = top->next;
