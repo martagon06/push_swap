@@ -6,13 +6,13 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/31 16:10:58 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/05 13:20:35 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/05 15:13:01 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_min_to_b(t_stack *a, t_stack *b)
+static int	find_min_pos(t_stack *a)
 {
 	t_node	*current;
 	int		min;
@@ -33,16 +33,25 @@ void	push_min_to_b(t_stack *a, t_stack *b)
 		current = current->next;
 		i++;
 	}
+	return (pos);
+}
+
+static void	bring_min_to_top(t_stack *a, int pos)
+{
 	if (pos <= a->size / 2)
-	{
 		while (pos-- > 0)
 			ra(a);
-	}
 	else
-	{
 		while (pos++ < a->size)
 			rra(a);
-	}
+}
+
+void	push_min_to_b(t_stack *a, t_stack *b)
+{
+	int	pos;
+
+	pos = find_min_pos(a);
+	bring_min_to_top(a, pos);
 	pb(a, b);
 }
 
@@ -70,42 +79,4 @@ char	*ft_strchr(const char *s, int c)
 	if (s[i] == (char)c)
 		return ((char *)(s + i));
 	return (NULL);
-}
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	size_t	i;
-	size_t	j;
-	char	*str;
-
-	i = 0;
-	j = 0;
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (!str)
-		return (NULL);
-	while (s[i])
-	{
-		if (i >= start && j < len)
-		{
-			str[j] = s[i];
-			j++;
-		}
-		i++;
-	}
-	str[j] = 0;
-	return (str);
-}
-
-int	is_sorted(t_stack *s)
-{
-	t_node	*cur;
-
-	cur = s->top;
-	while (cur && cur->next)
-	{
-		if (cur->index > cur->next->index)
-			return (0);
-		cur = cur->next;
-	}
-	return (1);
 }
