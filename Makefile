@@ -6,7 +6,7 @@
 #    By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/22 19:29:57 by miguelmo          #+#    #+#              #
-#    Updated: 2025/09/05 15:13:05 by miguelmo         ###   ########.fr        #
+#    Updated: 2025/09/06 12:03:50 by miguelmo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = push_swap
 
 SRC = main.c check_args.c normalize.c tinyshort.c calculate_cost.c move_cheapest.c \
 	swap.c rotate.c push.c reverse_rotate.c \
-	utils.c utils2.c utils3.c utils4.c\
+	utils.c utils2.c utils3.c utils4.c moves.c\
 	create_utils.c big_sort.c more_costs.c\
 
 OBJ = $(SRC:.c=.o)

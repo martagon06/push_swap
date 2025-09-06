@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 19:59:09 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/04 19:43:13 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/05 16:06:03 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ static int	is_valid_int(const char *str)
 			return (0);
 		i++;
 	}
+	if (ft_strlen(str) > 10)
+		return (0);
 	if (n < INT_MIN || n > INT_MAX)
 		return (0);
 	return (1);

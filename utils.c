@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:21:44 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/04 19:43:10 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/05 16:06:51 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_isdigit(char c)
 
 int	ft_atoi(const char *str)
 {
-	int		sign;
+	long	sign;
 	long	ret;
 
 	ret = 0;
@@ -41,7 +41,7 @@ int	ft_atoi(const char *str)
 			return (INT_MIN);
 		str++;
 	}
-	return ((int)(ret * sign));
+	return ((ret * sign));
 }
 
 void	ft_putchar_fd(char c, int fd)

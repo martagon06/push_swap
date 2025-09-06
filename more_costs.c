@@ -6,7 +6,7 @@
 /*   By: miguelmo <miguelmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/05 13:06:15 by miguelmo          #+#    #+#             */
-/*   Updated: 2025/09/05 15:13:06 by miguelmo         ###   ########.fr       */
+/*   Updated: 2025/09/06 12:01:58 by miguelmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,50 +85,4 @@ int	get_position(t_node *top, t_node *target)
 		pos++;
 	}
 	return (pos);
-}
-
-void	exec_moves(t_stack *a, t_stack *b, int cost_a, int cost_b, t_node *cheapest)
-{
-	int	pos;
-
-	while (cost_a > 0 && cost_b > 0)
-	{
-		rr(a, b);
-		cost_a--;
-		cost_b--;
-	}
-	while (cost_a < 0 && cost_b < 0)
-	{
-		rrr(a, b);
-		cost_a++;
-		cost_b++;
-	}
-	while (cost_a > 0)
-	{
-		ra(a);
-		cost_a--;
-	}
-	while (cost_a < 0)
-	{
-		rra(a);
-		cost_a++;
-	}
-	while (cost_b > 0)
-	{
-		rb(b);
-		cost_b--;
-	}
-	while (cost_b < 0)
-	{
-		rrb(b);
-		cost_b++;
-	}
-	while (b->top != cheapest)
-	{
-		pos = get_position(b->top, cheapest);
-		if (pos <= b->size / 2)
-			rb(b);
-		else
-			rrb(b);
-	}
 }
